@@ -1,0 +1,61 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  background-color: #fff;
+}
+
+.container .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+      90deg,
+      #fff1 0px,
+      #fff1 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(180deg, #fff1 0px, #fff1 1px, transparent 1px, transparent 10px);
+}
+
+.card {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s;
+}
+
+ion-icon {
+  color: #1a1a1a;
+  font-size: 15vw;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  flex-grow: 3;
+  background-color: #1a1a1a;
+}
+
+.card:hover ion-icon {
+  color: #fff;
+  font-size: 25vw;
+
+  filter: drop-shadow(0 0 10px #ea4884) drop-shadow(0 0 30px #ea4884) drop-shadow(0 0 60px #ea4884)
+    drop-shadow(0 0 100px #ea4884) drop-shadow(0 0 150px #ea4884);
+}
